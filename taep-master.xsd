@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:tei="http://www.tei-c.org/ns/1.0">
-	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>	
-	<xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dc.xsd"/>
-	<xs:import namespace="http://purl.org/dc/dcmitype/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcmitype.xsd"/>
-	<xs:element name="taep">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="dcterms:identifier" maxOccurs="2"/>
-				<xs:element ref="dcterms:publisher" maxOccurs="1"/>
-				<xs:element ref="dcterms:source" maxOccurs="1"/>
-				<xs:element ref="dcterms:title" maxOccurs="1"/>
-				<xs:element ref="dcterms:date" maxOccurs="1"/>
-				<xs:element ref="dcterms:subject" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element name="correspDesc" maxOccurs="1">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="correspAction" maxOccurs="2">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="persName" maxOccurs="unbounded"/>
-										<xs:element name="orgName" minOccurs="0" maxOccurs="unbounded"/>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element ref="dcterms:isPartOf" maxOccurs="2"/>
-				<xs:element ref="dcterms:hasPart" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:dcterms="http://purl.org/dc/terms/">
+    <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="https://raw.githubusercontent.com/Njrob/public_data/master/tei_all.xsd"/>
+    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>
+    <xs:element name="taep">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:correspDesc" maxOccurs="1"/>
+                <xs:element ref="tei:correspAction" minOccurs="0"/>
+                <xs:element ref="tei:persName" minOccurs="0"/>
+                <xs:element ref="tei:orgName" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="dcterms:title" maxOccurs="1"/>
+                <xs:element ref="dcterms:date" maxOccurs="1"/>
+                <xs:element ref="dcterms:subject" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="dcterms:publisher" maxOccurs="1"/>
+                <xs:element ref="dcterms:source" maxOccurs="1"/>
+                <xs:element ref="dcterms:identifier" maxOccurs="2"/>
+                <xs:element ref="dcterms:isPartOf" maxOccurs="2"/>
+                <xs:element ref="dcterms:hasPart" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
